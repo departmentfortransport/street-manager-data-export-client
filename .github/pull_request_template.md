@@ -1,0 +1,18 @@
+## Description
+
+Please explain briefly the changes you made here.
+
+## Coding Standards
+
+Style guide: https://github.com/departmentfortransport/street-manager/wiki/Street-Manager-Style-Guide
+Coding best practices: https://github.com/departmentfortransport/street-manager/wiki/Street-Manager-Coding-Best-Practices
+
+## Checklist
+
+- [ ] Branch named {feature|hotfix|task}/{SM-.*}
+- [ ] If your pull request depends on any other, please link them
+- [ ] Changes approved by your team
+- [ ] Changes approved by another team
+- [ ] API definitions updated
+- [ ] Commit messages are meaningful
+- [ ] Add `DO NOT MERGE` if you want to postpone merge
