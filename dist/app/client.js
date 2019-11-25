@@ -29,10 +29,7 @@ class StreetManagerDataExportClient {
     getLatestWorkDataCsv(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const axiosRequestConfig = this.generateRequestConfig(requestConfig);
-                axiosRequestConfig.responseType = 'arraybuffer';
-                axiosRequestConfig.transformResponse = (data) => data;
-                return yield this.axios.get('work-data', axiosRequestConfig);
+                return yield this.axios.get('/work-data', this.generateRequestConfig(requestConfig));
             }
             catch (err) {
                 return this.handleError(err);

@@ -1,8 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios'
 import { Agent } from 'https'
-import RequestConfig from '../interfaces/requestConfig'
+import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
+import { Stream } from 'stream'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -28,13 +29,9 @@ export class StreetManagerDataExportClient {
     this.axios = axios.create(axiosRequestConfig)
   }
 
-  public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<Buffer>> {
+  public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>> {
     try {
-      const axiosRequestConfig: AxiosRequestConfig = this.generateRequestConfig(requestConfig)
-      axiosRequestConfig.responseType = 'arraybuffer'
-      axiosRequestConfig.transformResponse = (data) => data
-
-      return await this.axios.get('work-data', axiosRequestConfig)
+      return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig))
     } catch (err) {
       return this.handleError(err)
     }
