@@ -3,7 +3,6 @@ import { Agent } from 'https'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
-import { Stream } from 'stream'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -29,7 +28,7 @@ export class StreetManagerDataExportClient {
     this.axios = axios.create(axiosRequestConfig)
   }
 
-  public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>> {
+  public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<string>> {
     try {
       return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig))
     } catch (err) {
