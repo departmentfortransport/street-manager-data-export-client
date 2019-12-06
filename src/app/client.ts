@@ -1,8 +1,10 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios'
+import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig, AxiosPromise } from 'axios'
 import { Agent } from 'https'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
+import { FPNCSVExportRequest } from '../interfaces/fpnCSVExportRequest'
+import { CSVExportResponse } from '../interfaces/csvExportResponse'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -28,9 +30,24 @@ export class StreetManagerDataExportClient {
     this.axios = axios.create(axiosRequestConfig)
   }
 
+  public generateFPNsCSV(config: RequestConfig, request: FPNCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)))
+  }
+
   public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<string>> {
     try {
       return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig))
+    } catch (err) {
+      return this.handleError(err)
+    }
+  }
+
+  private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
+    try {
+      const response: AxiosResponse<T> = await request()
+      if (response.data) {
+        return response.data
+      }
     } catch (err) {
       return this.handleError(err)
     }

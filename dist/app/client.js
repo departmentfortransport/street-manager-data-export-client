@@ -26,10 +26,26 @@ class StreetManagerDataExportClient {
         }
         this.axios = axios_1.default.create(axiosRequestConfig);
     }
+    generateFPNsCSV(config, request) {
+        return this.httpHandler(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)));
+    }
     getLatestWorkDataCsv(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 return yield this.axios.get('/work-data', this.generateRequestConfig(requestConfig));
+            }
+            catch (err) {
+                return this.handleError(err);
+            }
+        });
+    }
+    httpHandler(request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const response = yield request();
+                if (response.data) {
+                    return response.data;
+                }
             }
             catch (err) {
                 return this.handleError(err);
