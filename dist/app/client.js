@@ -29,6 +29,9 @@ class StreetManagerDataExportClient {
     generateFPNsCSV(config, request) {
         return this.httpHandler(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)));
     }
+    generateSection81sCSV(config, request) {
+        return this.httpHandler(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)));
+    }
     getLatestWorkDataCsv(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

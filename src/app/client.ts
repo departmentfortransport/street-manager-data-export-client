@@ -5,7 +5,7 @@ import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
 import { FPNCSVExportRequest } from '../interfaces/fpnCSVExportRequest'
 import { CSVExportResponse } from '../interfaces/csvExportResponse'
-import Section81CSVExportRequest from '../interfaces/section81CSVExportRequest'
+import { Section81CSVExportRequest } from '../interfaces/section81CSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
