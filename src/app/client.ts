@@ -6,6 +6,7 @@ import * as qs from 'qs'
 import { FPNCSVExportRequest } from '../interfaces/fpnCSVExportRequest'
 import { CSVExportResponse } from '../interfaces/csvExportResponse'
 import { Section81CSVExportRequest } from '../interfaces/section81CSVExportRequest'
+import { ReinstatementCSVExportRequest } from '../interfaces/reinstatementCSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -37,6 +38,10 @@ export class StreetManagerDataExportClient {
 
   public generateSection81sCSV(config: RequestConfig, request: Section81CSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public getReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/reinstatements/csv', request, this.generateRequestConfig(config)))
   }
 
   public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<string>> {
