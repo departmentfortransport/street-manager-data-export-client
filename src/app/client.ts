@@ -5,6 +5,7 @@ import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
 import { FPNCSVExportRequest } from '../interfaces/fpnCSVExportRequest'
 import { CSVExportResponse } from '../interfaces/csvExportResponse'
+import Section81CSVExportRequest from '../interfaces/section81CSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -32,6 +33,10 @@ export class StreetManagerDataExportClient {
 
   public generateFPNsCSV(config: RequestConfig, request: FPNCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public generateSection81sCSV(config: RequestConfig, request: Section81CSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)))
   }
 
   public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<string>> {
