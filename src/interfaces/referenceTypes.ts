@@ -77,3 +77,8 @@ export enum LaneRentalAssessmentOutcome {
   exempt = 'exempt',
   charges_not_applicable = 'charges_not_applicable'
 }
+
+export enum Section81Severity {
+  high = 'high',
+  low = 'low'
+}

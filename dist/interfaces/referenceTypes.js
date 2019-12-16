@@ -80,3 +80,8 @@ var LaneRentalAssessmentOutcome;
     LaneRentalAssessmentOutcome["exempt"] = "exempt";
     LaneRentalAssessmentOutcome["charges_not_applicable"] = "charges_not_applicable";
 })(LaneRentalAssessmentOutcome = exports.LaneRentalAssessmentOutcome || (exports.LaneRentalAssessmentOutcome = {}));
+var Section81Severity;
+(function (Section81Severity) {
+    Section81Severity["high"] = "high";
+    Section81Severity["low"] = "low";
+})(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
