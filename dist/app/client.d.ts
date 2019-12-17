@@ -26,8 +26,8 @@ export declare class StreetManagerDataExportClient {
     generatePermitsCSV(config: RequestConfig, request: PermitCSVExportRequest): Promise<CSVExportResponse>;
     generateForwardPlansCSV(config: RequestConfig, request: ForwardPlanCSVExportRequest): Promise<CSVExportResponse>;
     generateFeesCSV(config: RequestConfig, request: FeesCSVExportRequest): Promise<CSVExportResponse>;
-    getCsv(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
-    getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>>;
+    getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
+    getLatestWorkDataCSV(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>>;
     private httpHandler;
     private generateRequestConfig;
     private generateStreamRequestConfig;

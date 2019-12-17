@@ -55,12 +55,12 @@ class StreetManagerDataExportClient {
             return this.httpHandler(() => this.axios.post('/fees/csv', request, this.generateRequestConfig(config)));
         });
     }
-    getCsv(config, csvId) {
+    getCSV(config, csvId) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/csv/${csvId}`, this.generateStreamRequestConfig(config)));
         });
     }
-    getLatestWorkDataCsv(requestConfig) {
+    getLatestWorkDataCSV(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get('/work-data', this.generateStreamRequestConfig(requestConfig)));
         });
