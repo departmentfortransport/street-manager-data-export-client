@@ -21,7 +21,7 @@ export declare class StreetManagerDataExportClient {
     constructor(config: StreetManagerDataExportClientConfig);
     generateFPNsCSV(config: RequestConfig, request: FPNCSVExportRequest): Promise<CSVExportResponse>;
     generateSection81sCSV(config: RequestConfig, request: Section81CSVExportRequest): Promise<CSVExportResponse>;
-    getReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse>;
+    generateReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse>;
     generateInspectionsCSV(config: RequestConfig, request: InspectionCSVExportRequest): Promise<CSVExportResponse>;
     generatePermitsCSV(config: RequestConfig, request: PermitCSVExportRequest): Promise<CSVExportResponse>;
     generateForwardPlansCSV(config: RequestConfig, request: ForwardPlanCSVExportRequest): Promise<CSVExportResponse>;

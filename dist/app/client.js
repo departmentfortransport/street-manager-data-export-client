@@ -32,7 +32,7 @@ class StreetManagerDataExportClient {
     generateSection81sCSV(config, request) {
         return this.httpHandler(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)));
     }
-    getReinstatementsCSV(config, request) {
+    generateReinstatementsCSV(config, request) {
         return this.httpHandler(() => this.axios.post('/reinstatements/csv', request, this.generateRequestConfig(config)));
     }
     generateInspectionsCSV(config, request) {
@@ -62,12 +62,7 @@ class StreetManagerDataExportClient {
     }
     getLatestWorkDataCsv(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                return yield this.axios.get('/work-data', this.generateStreamRequestConfig(requestConfig));
-            }
-            catch (err) {
-                return this.handleError(err);
-            }
+            return this.httpHandler(() => this.axios.get('/work-data', this.generateStreamRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {

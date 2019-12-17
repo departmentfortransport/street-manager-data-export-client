@@ -45,7 +45,7 @@ export class StreetManagerDataExportClient {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)))
   }
 
-  public getReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse> {
+  public generateReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/reinstatements/csv', request, this.generateRequestConfig(config)))
   }
 
@@ -70,11 +70,7 @@ export class StreetManagerDataExportClient {
   }
 
   public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>> {
-    try {
-      return await this.axios.get('/work-data', this.generateStreamRequestConfig(requestConfig))
-    } catch (err) {
-      return this.handleError(err)
-    }
+    return this.httpHandler<AxiosResponse<Stream>>(() => this.axios.get('/work-data', this.generateStreamRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
