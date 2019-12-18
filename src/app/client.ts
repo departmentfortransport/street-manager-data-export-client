@@ -1,8 +1,17 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios'
+import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig, AxiosPromise } from 'axios'
 import { Agent } from 'https'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes'
 import * as qs from 'qs'
+import { FPNCSVExportRequest } from '../interfaces/fpnCSVExportRequest'
+import { CSVExportResponse } from '../interfaces/csvExportResponse'
+import { Section81CSVExportRequest } from '../interfaces/section81CSVExportRequest'
+import { ReinstatementCSVExportRequest } from '../interfaces/reinstatementCSVExportRequest'
+import { InspectionCSVExportRequest } from '../interfaces/inspectionCSVExportRequest'
+import { PermitCSVExportRequest } from '../interfaces/permitCSVExportRequest'
+import { ForwardPlanCSVExportRequest } from '../interfaces/forwardPlanCSVExportRequest'
+import { FeesCSVExportRequest } from '../interfaces/feesCSVExportRequest'
+import { Stream } from 'stream'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -28,9 +37,56 @@ export class StreetManagerDataExportClient {
     this.axios = axios.create(axiosRequestConfig)
   }
 
-  public async getLatestWorkDataCsv(requestConfig: RequestConfig): Promise<AxiosResponse<string>> {
+  public generateFPNsCSV(config: RequestConfig, request: FPNCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public generateSection81sCSV(config: RequestConfig, request: Section81CSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public generateReinstatementsCSV(config: RequestConfig, request: ReinstatementCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/reinstatements/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateInspectionsCSV(config: RequestConfig, request: InspectionCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/inspections/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generatePermitsCSV(config: RequestConfig, request: PermitCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/permits/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateForwardPlansCSV(config: RequestConfig, request: ForwardPlanCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/forward-plans/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateFeesCSV(config: RequestConfig, request: FeesCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/fees/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>> {
+    try {
+      return await this.axios.get(`/csv/${csvId}`, this.generateStreamRequestConfig(config))
+    } catch (err) {
+      return this.handleError(err)
+    }
+  }
+
+  public async getLatestWorkDataCSV(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>> {
     try {
       return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig))
+    } catch (err) {
+      return this.handleError(err)
+    }
+  }
+
+  private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
+    try {
+      const response: AxiosResponse<T> = await request()
+      if (response.data) {
+        return response.data
+      }
     } catch (err) {
       return this.handleError(err)
     }
@@ -57,6 +113,14 @@ export class StreetManagerDataExportClient {
     }
 
     return axiosRequestConfig
+  }
+
+  private generateStreamRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
+    return {
+      ...this.generateRequestConfig(config, request),
+      responseType: 'stream',
+      transformResponse: data => data
+    }
   }
 
   private handleError(err: any): Promise<any> {
