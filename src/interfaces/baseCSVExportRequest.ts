@@ -3,4 +3,5 @@ export interface BaseCSVExportRequest {
    * Up to four digits
    */
   swa_code?: string
+  query?: string
 }

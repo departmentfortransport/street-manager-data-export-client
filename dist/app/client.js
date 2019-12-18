@@ -29,7 +29,43 @@ class StreetManagerDataExportClient {
     generateFPNsCSV(config, request) {
         return this.httpHandler(() => this.axios.post('/fixed-penalty-notices/csv', request, this.generateRequestConfig(config)));
     }
-    getLatestWorkDataCsv(requestConfig) {
+    generateSection81sCSV(config, request) {
+        return this.httpHandler(() => this.axios.post('/section-81s/csv', request, this.generateRequestConfig(config)));
+    }
+    generateReinstatementsCSV(config, request) {
+        return this.httpHandler(() => this.axios.post('/reinstatements/csv', request, this.generateRequestConfig(config)));
+    }
+    generateInspectionsCSV(config, request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/inspections/csv', request, this.generateRequestConfig(config)));
+        });
+    }
+    generatePermitsCSV(config, request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/permits/csv', request, this.generateRequestConfig(config)));
+        });
+    }
+    generateForwardPlansCSV(config, request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/forward-plans/csv', request, this.generateRequestConfig(config)));
+        });
+    }
+    generateFeesCSV(config, request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/fees/csv', request, this.generateRequestConfig(config)));
+        });
+    }
+    getCSV(config, csvId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                return yield this.axios.get(`/csv/${csvId}`, this.generateStreamRequestConfig(config));
+            }
+            catch (err) {
+                return this.handleError(err);
+            }
+        });
+    }
+    getLatestWorkDataCSV(requestConfig) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 return yield this.axios.get('/work-data', this.generateRequestConfig(requestConfig));
@@ -71,6 +107,9 @@ class StreetManagerDataExportClient {
             };
         }
         return axiosRequestConfig;
+    }
+    generateStreamRequestConfig(config, request) {
+        return Object.assign({}, this.generateRequestConfig(config, request), { responseType: 'stream', transformResponse: data => data });
     }
     handleError(err) {
         err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
