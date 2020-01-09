@@ -1,4 +1,4 @@
-import { PermitStatus, WorkStatus, WorkCategory, PermitCsvExportPrefix, LaneRentalAssessmentOutcome } from './referenceTypes';
+import { PermitStatus, WorkStatus, WorkCategory, PermitCSVExportPrefix, LaneRentalAssessmentOutcome } from './referenceTypes';
 import { BaseCSVExportRequest } from './baseCSVExportRequest';
 export interface PermitCSVExportRequest extends BaseCSVExportRequest {
     status?: PermitStatus[];
@@ -10,7 +10,7 @@ export interface PermitCSVExportRequest extends BaseCSVExportRequest {
     start_date_created?: Date;
     end_date_created?: Date;
     active_permit_only?: boolean;
-    csv_export_prefix?: PermitCsvExportPrefix;
+    csv_export_prefix?: PermitCSVExportPrefix;
     is_traffic_sensitive?: boolean;
     is_high_impact_traffic_management?: boolean;
     has_no_final_registration?: boolean;

@@ -64,7 +64,7 @@ export enum WorkStatus {
   section_81 = 'section_81'
 }
 
-export enum PermitCsvExportPrefix {
+export enum PermitCSVExportPrefix {
   PA = 'PA',
   WR = 'WR',
   PAA = 'PAA'

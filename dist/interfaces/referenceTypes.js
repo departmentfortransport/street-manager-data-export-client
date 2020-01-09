@@ -66,12 +66,12 @@ var WorkStatus;
     WorkStatus["non_notifiable"] = "non_notifiable";
     WorkStatus["section_81"] = "section_81";
 })(WorkStatus = exports.WorkStatus || (exports.WorkStatus = {}));
-var PermitCsvExportPrefix;
-(function (PermitCsvExportPrefix) {
-    PermitCsvExportPrefix["PA"] = "PA";
-    PermitCsvExportPrefix["WR"] = "WR";
-    PermitCsvExportPrefix["PAA"] = "PAA";
-})(PermitCsvExportPrefix = exports.PermitCsvExportPrefix || (exports.PermitCsvExportPrefix = {}));
+var PermitCSVExportPrefix;
+(function (PermitCSVExportPrefix) {
+    PermitCSVExportPrefix["PA"] = "PA";
+    PermitCSVExportPrefix["WR"] = "WR";
+    PermitCSVExportPrefix["PAA"] = "PAA";
+})(PermitCSVExportPrefix = exports.PermitCSVExportPrefix || (exports.PermitCSVExportPrefix = {}));
 var LaneRentalAssessmentOutcome;
 (function (LaneRentalAssessmentOutcome) {
     LaneRentalAssessmentOutcome["chargeable"] = "chargeable";

@@ -56,7 +56,7 @@ export declare enum WorkStatus {
     non_notifiable = "non_notifiable",
     section_81 = "section_81"
 }
-export declare enum PermitCsvExportPrefix {
+export declare enum PermitCSVExportPrefix {
     PA = "PA",
     WR = "WR",
     PAA = "PAA"
