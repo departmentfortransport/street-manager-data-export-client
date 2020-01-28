@@ -72,3 +72,12 @@ export declare enum Section81Severity {
     high = "high",
     low = "low"
 }
+export declare enum Role {
+    Planner = "Planner",
+    HighwayAuthority = "HighwayAuthority",
+    Admin = "Admin",
+    Contractor = "Contractor",
+    API = "API",
+    UI = "UI",
+    DataExport = "DataExport"
+}

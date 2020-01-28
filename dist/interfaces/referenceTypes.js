@@ -85,3 +85,13 @@ var Section81Severity;
     Section81Severity["high"] = "high";
     Section81Severity["low"] = "low";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
+var Role;
+(function (Role) {
+    Role["Planner"] = "Planner";
+    Role["HighwayAuthority"] = "HighwayAuthority";
+    Role["Admin"] = "Admin";
+    Role["Contractor"] = "Contractor";
+    Role["API"] = "API";
+    Role["UI"] = "UI";
+    Role["DataExport"] = "DataExport";
+})(Role = exports.Role || (exports.Role = {}));

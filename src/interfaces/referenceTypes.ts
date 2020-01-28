@@ -82,3 +82,13 @@ export enum Section81Severity {
   high = 'high',
   low = 'low'
 }
+
+export enum Role {
+  Planner = 'Planner',
+  HighwayAuthority = 'HighwayAuthority',
+  Admin = 'Admin',
+  Contractor = 'Contractor',
+  API = 'API',
+  UI = 'UI',
+  DataExport = 'DataExport'
+}
