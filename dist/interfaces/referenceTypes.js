@@ -54,6 +54,7 @@ var WorkCategory;
     WorkCategory["immediate_urgent"] = "immediate_urgent";
     WorkCategory["immediate_emergency"] = "immediate_emergency";
     WorkCategory["paa"] = "paa";
+    WorkCategory["hs2_highway"] = "hs2_highway";
 })(WorkCategory = exports.WorkCategory || (exports.WorkCategory = {}));
 var WorkStatus;
 (function (WorkStatus) {
