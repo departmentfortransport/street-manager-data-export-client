@@ -103,6 +103,10 @@ export class StreetManagerDataExportClient {
       axiosRequestConfig.headers.token = requestConfig.token
     }
 
+    if (requestConfig.frontendToken) {
+      axiosRequestConfig.headers.frontendToken = requestConfig.frontendToken
+    }
+
     if (!request) {
       axiosRequestConfig.params = {}
     } else {
