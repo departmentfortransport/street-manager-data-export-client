@@ -83,3 +83,23 @@ export enum Section81Severity {
   high = 'high',
   low = 'low'
 }
+
+export enum AlterationStatus {
+  submitted = 'submitted',
+  granted = 'granted',
+  granted_with_duration_challenge = 'granted_with_duration_challenge',
+  refused = 'refused',
+  deemed = 'deemed',
+  cancelled = 'cancelled',
+  revoked = 'revoked',
+  auto_applied = 'auto_applied'
+}
+
+export enum AlterationType {
+  PROMOTER_IMPOSED_CHANGE = 'PROMOTER_IMPOSED_CHANGE',
+  PROMOTER_CHANGE_REQUEST = 'PROMOTER_CHANGE_REQUEST',
+  HA_CHANGE_REQUEST = 'HA_CHANGE_REQUEST',
+  HA_IMPOSED_CHANGE = 'HA_IMPOSED_CHANGE',
+  WORK_EXTENSION = 'WORK_EXTENSION',
+  DURATION_CHALLENGE = 'DURATION_CHALLENGE'
+}

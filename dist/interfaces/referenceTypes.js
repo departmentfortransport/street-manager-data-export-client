@@ -86,3 +86,23 @@ var Section81Severity;
     Section81Severity["high"] = "high";
     Section81Severity["low"] = "low";
 })(Section81Severity = exports.Section81Severity || (exports.Section81Severity = {}));
+var AlterationStatus;
+(function (AlterationStatus) {
+    AlterationStatus["submitted"] = "submitted";
+    AlterationStatus["granted"] = "granted";
+    AlterationStatus["granted_with_duration_challenge"] = "granted_with_duration_challenge";
+    AlterationStatus["refused"] = "refused";
+    AlterationStatus["deemed"] = "deemed";
+    AlterationStatus["cancelled"] = "cancelled";
+    AlterationStatus["revoked"] = "revoked";
+    AlterationStatus["auto_applied"] = "auto_applied";
+})(AlterationStatus = exports.AlterationStatus || (exports.AlterationStatus = {}));
+var AlterationType;
+(function (AlterationType) {
+    AlterationType["PROMOTER_IMPOSED_CHANGE"] = "PROMOTER_IMPOSED_CHANGE";
+    AlterationType["PROMOTER_CHANGE_REQUEST"] = "PROMOTER_CHANGE_REQUEST";
+    AlterationType["HA_CHANGE_REQUEST"] = "HA_CHANGE_REQUEST";
+    AlterationType["HA_IMPOSED_CHANGE"] = "HA_IMPOSED_CHANGE";
+    AlterationType["WORK_EXTENSION"] = "WORK_EXTENSION";
+    AlterationType["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
+})(AlterationType = exports.AlterationType || (exports.AlterationType = {}));

@@ -55,6 +55,11 @@ class StreetManagerDataExportClient {
             return this.httpHandler(() => this.axios.post('/fees/csv', request, this.generateRequestConfig(config)));
         });
     }
+    generatePermitAlterationsCSV(config, request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/alterations/csv', request, this.generateRequestConfig(config)));
+        });
+    }
     getCSV(config, csvId) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
