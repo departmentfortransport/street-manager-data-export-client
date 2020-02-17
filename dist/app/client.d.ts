@@ -10,6 +10,7 @@ import { PermitCSVExportRequest } from '../interfaces/permitCSVExportRequest';
 import { ForwardPlanCSVExportRequest } from '../interfaces/forwardPlanCSVExportRequest';
 import { FeesCSVExportRequest } from '../interfaces/feesCSVExportRequest';
 import { Stream } from 'stream';
+import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlterationCSVExportRequest';
 export interface StreetManagerDataExportClientConfig {
     baseURL: string;
     timeout?: number;
@@ -26,6 +27,7 @@ export declare class StreetManagerDataExportClient {
     generatePermitsCSV(config: RequestConfig, request: PermitCSVExportRequest): Promise<CSVExportResponse>;
     generateForwardPlansCSV(config: RequestConfig, request: ForwardPlanCSVExportRequest): Promise<CSVExportResponse>;
     generateFeesCSV(config: RequestConfig, request: FeesCSVExportRequest): Promise<CSVExportResponse>;
+    generatePermitAlterationsCSV(config: RequestConfig, request: PermitAlterationCSVExportRequest): Promise<CSVExportResponse>;
     getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
     getLatestWorkDataCSV(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>>;
     private httpHandler;
