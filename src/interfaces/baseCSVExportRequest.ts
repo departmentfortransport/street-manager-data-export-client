@@ -4,4 +4,5 @@ export interface BaseCSVExportRequest {
    */
   swa_code?: string
   query?: string
+  geographical_area_reference_number?: string[]
 }

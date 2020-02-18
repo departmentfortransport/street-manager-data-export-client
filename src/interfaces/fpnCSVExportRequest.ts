@@ -7,5 +7,4 @@ export interface FPNCSVExportRequest extends BaseCSVExportRequest {
   start_date?: Date
   /** end_date must be the same as or after start_date if both are provided */
   end_date?: Date
-  geographical_area_reference_number?: string[]
 }
