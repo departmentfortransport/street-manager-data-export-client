@@ -24,4 +24,5 @@ export interface PermitCSVExportRequest extends BaseCSVExportRequest {
     consultation_works_only?: boolean;
     consent_works_only?: boolean;
     unacknowledged_by_ha_only?: boolean;
+    geographical_area_reference_number?: string[];
 }

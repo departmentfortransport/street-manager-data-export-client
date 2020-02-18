@@ -16,4 +16,5 @@ export interface PermitAlterationCSVExportRequest extends BaseCSVExportRequest {
   is_deemed?: boolean
   lane_rental_charges_not_agreed?: boolean
   lane_rental_charges_potentially_apply?: boolean
+  geographical_area_reference_number?: string[]
 }

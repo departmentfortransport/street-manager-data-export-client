@@ -5,4 +5,5 @@ export interface ForwardPlanCSVExportRequest extends BaseCSVExportRequest {
   forward_plan_status?: ForwardPlanStatus[]
   proposed_start_date?: Date
   proposed_end_date?: Date
+  geographical_area_reference_number?: string[]
 }
