@@ -1,6 +1,4 @@
-import { BaseCSVExportRequest } from './baseCSVExportRequest'
-
-export interface OrganisationDataCSVExportRequest extends BaseCSVExportRequest {
+export interface OrganisationDataCSVExportRequest {
   start_date: Date
   start_date_time?: Date
   end_date: Date
