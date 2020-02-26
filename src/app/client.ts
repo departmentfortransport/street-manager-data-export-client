@@ -13,6 +13,7 @@ import { ForwardPlanCSVExportRequest } from '../interfaces/forwardPlanCSVExportR
 import { FeesCSVExportRequest } from '../interfaces/feesCSVExportRequest'
 import { Stream } from 'stream'
 import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlterationCSVExportRequest'
+import { OrganisationDataCSVExportRequest } from '../interfaces/organisationDataCSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -68,6 +69,10 @@ export class StreetManagerDataExportClient {
 
   public async generatePermitAlterationsCSV(config: RequestConfig, request: PermitAlterationCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/alterations/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateOrganisationDataCSV(config: RequestConfig, request: OrganisationDataCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/organisation-data/csv', request, this.generateRequestConfig(config)))
   }
 
   public async getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>> {
