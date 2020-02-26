@@ -12,3 +12,4 @@ export * from './interfaces/feesCSVExportRequest';
 export * from './interfaces/forwardPlanCSVExportRequest';
 export * from './interfaces/permitAlterationCSVExportRequest';
 export * from './interfaces/organisationDataCSVExportRequest';
+export * from './interfaces/commentCSVExportRequest';
