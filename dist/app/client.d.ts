@@ -13,6 +13,7 @@ import { Stream } from 'stream';
 import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlterationCSVExportRequest';
 import { OrganisationDataCSVExportRequest } from '../interfaces/organisationDataCSVExportRequest';
 import { CommentCSVExportRequest } from '../interfaces/commentCSVExportRequest';
+import { GetDataCSVRequest } from '../interfaces/getDataCSVRequest';
 export interface StreetManagerDataExportClientConfig {
     baseURL: string;
     timeout?: number;
@@ -33,7 +34,8 @@ export declare class StreetManagerDataExportClient {
     generateOrganisationDataCSV(config: RequestConfig, request: OrganisationDataCSVExportRequest): Promise<CSVExportResponse>;
     generateCommentsCSV(config: RequestConfig, request: CommentCSVExportRequest): Promise<CSVExportResponse>;
     getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
-    getLatestWorkDataCSV(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>>;
+    getWorkDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>>;
+    getActivityDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>>;
     private httpHandler;
     private generateRequestConfig;
     private generateStreamRequestConfig;

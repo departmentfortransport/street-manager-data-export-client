@@ -13,3 +13,4 @@ export * from './interfaces/forwardPlanCSVExportRequest';
 export * from './interfaces/permitAlterationCSVExportRequest';
 export * from './interfaces/organisationDataCSVExportRequest';
 export * from './interfaces/commentCSVExportRequest';
+export * from './interfaces/getDataCSVRequest';

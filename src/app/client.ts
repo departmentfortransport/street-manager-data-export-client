@@ -15,6 +15,7 @@ import { Stream } from 'stream'
 import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlterationCSVExportRequest'
 import { OrganisationDataCSVExportRequest } from '../interfaces/organisationDataCSVExportRequest'
 import { CommentCSVExportRequest } from '../interfaces/commentCSVExportRequest'
+import { GetDataCSVRequest } from '../interfaces/getDataCSVRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -88,9 +89,17 @@ export class StreetManagerDataExportClient {
     }
   }
 
-  public async getLatestWorkDataCSV(requestConfig: RequestConfig): Promise<AxiosResponse<Stream>> {
+  public async getWorkDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>> {
     try {
-      return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig))
+      return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig, getDataCSVRequest))
+    } catch (err) {
+      return this.handleError(err)
+    }
+  }
+
+  public async getActivityDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>> {
+    try {
+      return await this.axios.get('/activity-data', this.generateRequestConfig(requestConfig, getDataCSVRequest))
     } catch (err) {
       return this.handleError(err)
     }
