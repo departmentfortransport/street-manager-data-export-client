@@ -14,6 +14,7 @@ import { FeesCSVExportRequest } from '../interfaces/feesCSVExportRequest'
 import { Stream } from 'stream'
 import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlterationCSVExportRequest'
 import { OrganisationDataCSVExportRequest } from '../interfaces/organisationDataCSVExportRequest'
+import { CommentCSVExportRequest } from '../interfaces/commentCSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -73,6 +74,10 @@ export class StreetManagerDataExportClient {
 
   public async generateOrganisationDataCSV(config: RequestConfig, request: OrganisationDataCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/organisation-data/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateCommentsCSV(config: RequestConfig, request: CommentCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/comments/csv', request, this.generateRequestConfig(config)))
   }
 
   public async getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>> {
