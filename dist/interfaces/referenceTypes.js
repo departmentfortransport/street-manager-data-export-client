@@ -107,3 +107,11 @@ var AlterationType;
     AlterationType["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
     AlterationType["MODIFIED_PERMIT"] = "MODIFIED_PERMIT";
 })(AlterationType = exports.AlterationType || (exports.AlterationType = {}));
+var CommentTopic;
+(function (CommentTopic) {
+    CommentTopic["GENERAL"] = "GENERAL";
+    CommentTopic["SECTION_74"] = "SECTION_74";
+    CommentTopic["INSPECTION"] = "INSPECTION";
+    CommentTopic["FPN"] = "FPN";
+    CommentTopic["OVERRUN"] = "OVERRUN";
+})(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));
