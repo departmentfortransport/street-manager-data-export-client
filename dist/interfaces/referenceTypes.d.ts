@@ -92,3 +92,10 @@ export declare enum AlterationType {
     DURATION_CHALLENGE = "DURATION_CHALLENGE",
     MODIFIED_PERMIT = "MODIFIED_PERMIT"
 }
+export declare enum CommentTopic {
+    GENERAL = "GENERAL",
+    SECTION_74 = "SECTION_74",
+    INSPECTION = "INSPECTION",
+    FPN = "FPN",
+    OVERRUN = "OVERRUN"
+}
