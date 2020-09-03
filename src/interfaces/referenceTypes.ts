@@ -117,3 +117,24 @@ export enum CommentTopic {
   DURATION_CHALLENGE = 'DURATION_CHALLENGE',
   SECTION_81 = 'SECTION_81'
 }
+
+export enum InspectionType {
+  live_site = 'live_site',
+  reinstatement = 'reinstatement',
+  non_compliance_follow_up = 'non_compliance_follow_up',
+  section_81 = 'section_81'
+}
+
+export enum InspectionOutcome {
+  passed = 'passed',
+  unable_to_complete_inspection = 'unable_to_complete_inspection',
+  failed_low = 'failed_low',
+  failed_high = 'failed_high',
+  further_inspections_required = 'further_inspections_required',
+  agreed_site_compliance = 'agreed_site_compliance',
+  non_compliant_with_conditions = 'non_compliant_with_conditions',
+  works_stopped_apparatus_remaining = 'works_stopped_apparatus_remaining',
+  works_in_progress_no_carriageway_incursion = 'works_in_progress_no_carriageway_incursion',
+  works_in_progress = 'works_in_progress',
+  works_stopped = 'works_stopped'
+}
