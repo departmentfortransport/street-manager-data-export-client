@@ -138,3 +138,10 @@ export enum InspectionOutcome {
   works_in_progress = 'works_in_progress',
   works_stopped = 'works_stopped'
 }
+
+export enum OffenceCode {
+  offence_code_05 = 'offence_code_05',
+  offence_code_06 = 'offence_code_06',
+  offence_code_08 = 'offence_code_08',
+  offence_code_09 = 'offence_code_09'
+}

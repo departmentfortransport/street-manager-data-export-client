@@ -141,3 +141,10 @@ var InspectionOutcome;
     InspectionOutcome["works_in_progress"] = "works_in_progress";
     InspectionOutcome["works_stopped"] = "works_stopped";
 })(InspectionOutcome = exports.InspectionOutcome || (exports.InspectionOutcome = {}));
+var OffenceCode;
+(function (OffenceCode) {
+    OffenceCode["offence_code_05"] = "offence_code_05";
+    OffenceCode["offence_code_06"] = "offence_code_06";
+    OffenceCode["offence_code_08"] = "offence_code_08";
+    OffenceCode["offence_code_09"] = "offence_code_09";
+})(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));
