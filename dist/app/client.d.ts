@@ -15,6 +15,7 @@ import { OrganisationDataCSVExportRequest } from '../interfaces/organisationData
 import { CommentCSVExportRequest } from '../interfaces/commentCSVExportRequest';
 import { GetDataCSVRequest } from '../interfaces/getDataCSVRequest';
 import { InspectionOutcomesCSVExportRequest } from '../interfaces/performance-reporting/inspectionOutcomesCSVExportRequest';
+import { PermitsCreatedCSVExportRequest } from '../interfaces/performance-reporting/permitsCreatedCSVExportRequest';
 export interface StreetManagerDataExportClientConfig {
     baseURL: string;
     timeout?: number;
@@ -35,6 +36,7 @@ export declare class StreetManagerDataExportClient {
     generateOrganisationDataCSV(config: RequestConfig, request: OrganisationDataCSVExportRequest): Promise<CSVExportResponse>;
     generateCommentsCSV(config: RequestConfig, request: CommentCSVExportRequest): Promise<CSVExportResponse>;
     generateInspectionOutcomesCSV(config: RequestConfig, request: InspectionOutcomesCSVExportRequest): Promise<CSVExportResponse>;
+    generatePermitsCreatedCSV(config: RequestConfig, request: PermitsCreatedCSVExportRequest): Promise<CSVExportResponse>;
     getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
     getWorkDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>>;
     getActivityDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>>;
