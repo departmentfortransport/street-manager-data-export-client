@@ -14,3 +14,6 @@ export * from './interfaces/permitAlterationCSVExportRequest';
 export * from './interfaces/organisationDataCSVExportRequest';
 export * from './interfaces/commentCSVExportRequest';
 export * from './interfaces/getDataCSVRequest';
+export * from './interfaces/performance-reporting/basePerformanceReportingCSVExportRequest';
+export * from './interfaces/performance-reporting/inspectionOutcomesCSVExportRequest';
+export * from './interfaces/performance-reporting/permitsCreatedCSVExportRequest';

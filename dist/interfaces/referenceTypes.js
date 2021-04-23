@@ -120,3 +120,31 @@ var CommentTopic;
     CommentTopic["DURATION_CHALLENGE"] = "DURATION_CHALLENGE";
     CommentTopic["SECTION_81"] = "SECTION_81";
 })(CommentTopic = exports.CommentTopic || (exports.CommentTopic = {}));
+var InspectionType;
+(function (InspectionType) {
+    InspectionType["live_site"] = "live_site";
+    InspectionType["reinstatement"] = "reinstatement";
+    InspectionType["non_compliance_follow_up"] = "non_compliance_follow_up";
+    InspectionType["section_81"] = "section_81";
+})(InspectionType = exports.InspectionType || (exports.InspectionType = {}));
+var InspectionOutcome;
+(function (InspectionOutcome) {
+    InspectionOutcome["passed"] = "passed";
+    InspectionOutcome["unable_to_complete_inspection"] = "unable_to_complete_inspection";
+    InspectionOutcome["failed_low"] = "failed_low";
+    InspectionOutcome["failed_high"] = "failed_high";
+    InspectionOutcome["further_inspections_required"] = "further_inspections_required";
+    InspectionOutcome["agreed_site_compliance"] = "agreed_site_compliance";
+    InspectionOutcome["non_compliant_with_conditions"] = "non_compliant_with_conditions";
+    InspectionOutcome["works_stopped_apparatus_remaining"] = "works_stopped_apparatus_remaining";
+    InspectionOutcome["works_in_progress_no_carriageway_incursion"] = "works_in_progress_no_carriageway_incursion";
+    InspectionOutcome["works_in_progress"] = "works_in_progress";
+    InspectionOutcome["works_stopped"] = "works_stopped";
+})(InspectionOutcome = exports.InspectionOutcome || (exports.InspectionOutcome = {}));
+var OffenceCode;
+(function (OffenceCode) {
+    OffenceCode["offence_code_05"] = "offence_code_05";
+    OffenceCode["offence_code_06"] = "offence_code_06";
+    OffenceCode["offence_code_08"] = "offence_code_08";
+    OffenceCode["offence_code_09"] = "offence_code_09";
+})(OffenceCode = exports.OffenceCode || (exports.OffenceCode = {}));

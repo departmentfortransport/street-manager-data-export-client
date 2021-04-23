@@ -16,6 +16,8 @@ import { PermitAlterationCSVExportRequest } from '../interfaces/permitAlteration
 import { OrganisationDataCSVExportRequest } from '../interfaces/organisationDataCSVExportRequest'
 import { CommentCSVExportRequest } from '../interfaces/commentCSVExportRequest'
 import { GetDataCSVRequest } from '../interfaces/getDataCSVRequest'
+import { InspectionOutcomesCSVExportRequest } from '../interfaces/performance-reporting/inspectionOutcomesCSVExportRequest'
+import { PermitsCreatedCSVExportRequest } from '../interfaces/performance-reporting/permitsCreatedCSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -79,6 +81,14 @@ export class StreetManagerDataExportClient {
 
   public async generateCommentsCSV(config: RequestConfig, request: CommentCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/comments/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generateInspectionOutcomesCSV(config: RequestConfig, request: InspectionOutcomesCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/performance-reporting/inspection-outcomes/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generatePermitsCreatedCSV(config: RequestConfig, request: PermitsCreatedCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/performance-reporting/permits-created/csv', request, this.generateRequestConfig(config)))
   }
 
   public async getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>> {
