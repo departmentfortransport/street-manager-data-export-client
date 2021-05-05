@@ -91,16 +91,6 @@ class StreetManagerDataExportClient {
             }
         });
     }
-    getWorkDataCSV(requestConfig, getDataCSVRequest) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                return yield this.axios.get('/work-data', this.generateRequestConfig(requestConfig, getDataCSVRequest));
-            }
-            catch (err) {
-                return this.handleError(err);
-            }
-        });
-    }
     getActivityDataCSV(requestConfig, getDataCSVRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
