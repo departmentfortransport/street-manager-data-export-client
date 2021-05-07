@@ -2,32 +2,32 @@ import { PermitStatus, WorkStatus, WorkCategory, PermitCsvExportPrefix, LaneRent
 import { BaseCSVExportRequest } from './baseCSVExportRequest'
 
 export interface PermitCSVExportRequest extends BaseCSVExportRequest {
-  status?: PermitStatus[]
-  work_status?: WorkStatus[]
-  work_category?: WorkCategory[]
-  lane_rental_assessment_outcome?: LaneRentalAssessmentOutcome[]
-  start_date?: Date
-  end_date?: Date
-  work_start_date_from?: Date
-  work_start_date_to?: Date
-  work_end_date_from?: Date
-  work_end_date_to?: Date
-  start_date_created?: Date
-  end_date_created?: Date
-  active_permit_only?: boolean
-  csv_export_prefix?: PermitCsvExportPrefix
-  is_traffic_sensitive?: boolean
-  is_high_impact_traffic_management?: boolean
-  has_no_final_registration?: boolean
-  has_excavation?: boolean
-  is_early_start?: boolean
-  is_deemed?: boolean
-  lane_rental_charges_not_agreed?: boolean
-  lane_rental_charges_potentially_apply?: boolean
-  ever_modification_requested?: boolean
-  hs2_works_only?: boolean
-  consultation_works_only?: boolean
-  consent_works_only?: boolean
-  unacknowledged_by_ha_only?: boolean
-  is_duration_challenged?: boolean
+  status?: PermitStatus[] | null
+  work_status?: WorkStatus[] | null
+  work_category?: WorkCategory[] | null
+  lane_rental_assessment_outcome?: LaneRentalAssessmentOutcome[] | null
+  start_date?: Date | null
+  end_date?: Date | null
+  work_start_date_from?: Date | null
+  work_start_date_to?: Date | null
+  work_end_date_from?: Date | null
+  work_end_date_to?: Date | null
+  start_date_created?: Date | null
+  end_date_created?: Date | null
+  active_permit_only?: boolean | null
+  csv_export_prefix?: PermitCsvExportPrefix | null
+  is_traffic_sensitive?: boolean | null
+  is_high_impact_traffic_management?: boolean | null
+  has_no_final_registration?: boolean | null
+  has_excavation?: boolean | null
+  is_early_start?: boolean | null
+  is_deemed?: boolean | null
+  lane_rental_charges_not_agreed?: boolean | null
+  lane_rental_charges_potentially_apply?: boolean | null
+  ever_modification_requested?: boolean | null
+  hs2_works_only?: boolean | null
+  consultation_works_only?: boolean | null
+  consent_works_only?: boolean | null
+  unacknowledged_by_ha_only?: boolean | null
+  is_duration_challenged?: boolean | null
 }
