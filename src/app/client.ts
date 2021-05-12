@@ -99,14 +99,6 @@ export class StreetManagerDataExportClient {
     }
   }
 
-  public async getWorkDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>> {
-    try {
-      return await this.axios.get('/work-data', this.generateRequestConfig(requestConfig, getDataCSVRequest))
-    } catch (err) {
-      return this.handleError(err)
-    }
-  }
-
   public async getActivityDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>> {
     try {
       return await this.axios.get('/activity-data', this.generateRequestConfig(requestConfig, getDataCSVRequest))
