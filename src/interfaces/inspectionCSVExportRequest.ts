@@ -2,11 +2,11 @@ import { InspectionResponseType, InspectionType, InspectionOutcome } from './ref
 import { BaseCSVExportRequest } from './baseCSVExportRequest'
 
 export interface InspectionCSVExportRequest extends BaseCSVExportRequest {
-  inspection_response_type?: InspectionResponseType[] | null
-  start_date?: Date | null
-  end_date?: Date | null
-  inspection_type?: InspectionType[] | null
-  inspection_outcome?: InspectionOutcome[] | null
-  start_date_created?: Date | null
-  end_date_created?: Date | null
+  inspection_response_type?: null | InspectionResponseType[]
+  start_date?: null | Date
+  end_date?: null | Date
+  inspection_type?: null | InspectionType[]
+  inspection_outcome?: null | InspectionOutcome[]
+  start_date_created?: null | Date
+  end_date_created?: null | Date
 }
