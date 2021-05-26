@@ -15,4 +15,6 @@ export interface PermitAlterationCSVExportRequest extends BaseCSVExportRequest {
     is_deemed?: null | boolean;
     lane_rental_charges_not_agreed?: null | boolean;
     lane_rental_charges_potentially_apply?: null | boolean;
+    status_update_date_from?: null | Date;
+    status_update_date_to?: null | Date;
 }
