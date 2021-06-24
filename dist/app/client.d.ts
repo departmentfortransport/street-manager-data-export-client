@@ -18,6 +18,7 @@ import { InspectionOutcomesCSVExportRequest } from '../interfaces/performance-re
 import { PermitsCreatedCSVExportRequest } from '../interfaces/performance-reporting/permitsCreatedCSVExportRequest';
 import { FPNsCreatedCSVExportRequest } from '../interfaces/performance-reporting/fpnsCreatedCSVExportRequest';
 import { PermitOutcomesCSVExportRequest } from '../interfaces/performance-reporting/permitOutcomesCSVExportRequest';
+import { PermitAlterationsCreatedCSVExportRequest } from '../interfaces/performance-reporting/permitAlterationsCreatedCSVExportRequest';
 export interface StreetManagerDataExportClientConfig {
     baseURL: string;
     timeout?: number;
@@ -41,6 +42,7 @@ export declare class StreetManagerDataExportClient {
     generatePermitsCreatedCSV(config: RequestConfig, request: PermitsCreatedCSVExportRequest): Promise<CSVExportResponse>;
     generateFPNsCreatedCSV(config: RequestConfig, request: FPNsCreatedCSVExportRequest): Promise<CSVExportResponse>;
     generatePermitOutcomesCSV(config: RequestConfig, request: PermitOutcomesCSVExportRequest): Promise<CSVExportResponse>;
+    generatePermitAlterationsCreatedCSV(config: RequestConfig, request: PermitAlterationsCreatedCSVExportRequest): Promise<CSVExportResponse>;
     getCSV(config: RequestConfig, csvId: number): Promise<AxiosResponse<Stream>>;
     getActivityDataCSV(requestConfig: RequestConfig, getDataCSVRequest: GetDataCSVRequest): Promise<AxiosResponse<Stream>>;
     private httpHandler;
