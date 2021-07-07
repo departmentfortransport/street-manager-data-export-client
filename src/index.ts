@@ -19,3 +19,4 @@ export * from './interfaces/performance-reporting/inspectionOutcomesCSVExportReq
 export * from './interfaces/performance-reporting/permitsCreatedCSVExportRequest'
 export * from './interfaces/performance-reporting/fpnsCreatedCSVExportRequest'
 export * from './interfaces/performance-reporting/permitOutcomesCSVExportRequest'
+export * from './interfaces/performance-reporting/permitAlterationsCreatedCSVExportRequest'
