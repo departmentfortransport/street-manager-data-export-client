@@ -21,6 +21,7 @@ import { PermitsCreatedCSVExportRequest } from '../interfaces/performance-report
 import { FPNsCreatedCSVExportRequest } from '../interfaces/performance-reporting/fpnsCreatedCSVExportRequest'
 import { PermitOutcomesCSVExportRequest } from '../interfaces/performance-reporting/permitOutcomesCSVExportRequest'
 import { PermitAlterationsCreatedCSVExportRequest } from '../interfaces/performance-reporting/permitAlterationsCreatedCSVExportRequest'
+import { PermitAlterationOutcomesCSVExportRequest } from '../interfaces/performance-reporting/permitAlterationOutcomesCSVExportRequest'
 
 export interface StreetManagerDataExportClientConfig {
   baseURL: string,
@@ -76,6 +77,10 @@ export class StreetManagerDataExportClient {
 
   public async generatePermitAlterationsCSV(config: RequestConfig, request: PermitAlterationCSVExportRequest): Promise<CSVExportResponse> {
     return this.httpHandler<CSVExportResponse>(() => this.axios.post('/alterations/csv', request, this.generateRequestConfig(config)))
+  }
+
+  public async generatePermitAlterationOutcomesCSV(config: RequestConfig, request: PermitAlterationOutcomesCSVExportRequest): Promise<CSVExportResponse> {
+    return this.httpHandler<CSVExportResponse>(() => this.axios.post('/performance-reporting/permit-alteration-outcomes/csv', request, this.generateRequestConfig(config)))
   }
 
   public async generateOrganisationDataCSV(config: RequestConfig, request: OrganisationDataCSVExportRequest): Promise<CSVExportResponse> {
